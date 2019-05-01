@@ -1,0 +1,20 @@
+---
+vars:
+  cli:
+    hosts: "{{ inventory_hostname }}"
+    username: "{{ device_ssh_username }}"
+    password: "{{ device_ssh_password }}"
+    transport: cli
+  tasks:
+  -name Login to Raritan
+  -expect:
+      command: ''
+      responses:
+          login as: "anonymous"
+          password: ""
+  
+# Collect only the config and default facts
+- ios_facts:
+    gather_subset:
+      - config
+    provider: "{{ cli }}"
