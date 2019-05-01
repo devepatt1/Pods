@@ -6,14 +6,15 @@ vars:
     password: "{{ device_ssh_password }}"
     transport: cli
   tasks:
-  -name: Login to Raritan
-  -expect:
-      command: \r\n
-      responses:
-          login as: "anonymous"
-          password: ""
-          Password: "cisco"
-   -ios_facts:
-      gather_subset:
-        - config
-      provider: "{{ cli }}"
+  -name: Login to device
+  cli_command:
+    command: ""
+    prompt:
+      -"Password:"
+    answer: "cisco"
+  cli_command:
+    command: "show version"
+  register: command_output
+  -name: Print to terminal
+  debug:
+    msg: "{{command_output.stdout}}"
