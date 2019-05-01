@@ -1,4 +1,5 @@
 - name: configure the login banner
+  hosts: all
   ios_banner:
     banner: login
     text: |
