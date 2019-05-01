@@ -1,0 +1,7 @@
+- name: Get Config
+  ios_facts:
+    hosts:"{{ inventory_hostname }}"
+    username: "{{ device_ssh_username }}"
+    password: "{{ device_ssh_password }}"
+    gather_subset:
+        - config
