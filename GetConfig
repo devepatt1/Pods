@@ -1,7 +1,14 @@
-- name: Get Config
-  ios_facts:
-    hosts:"{{ inventory_hostname }}"
+---
+vars:
+  cli:
+    host: "{{ inventory_hostname }}"
     username: "{{ device_ssh_username }}"
     password: "{{ device_ssh_password }}"
+    transport: cli
+
+---
+# Collect only the config and default facts
+- ios_facts:
     gather_subset:
-        - config
+      - config
+    provider: "{{ cli }}"
