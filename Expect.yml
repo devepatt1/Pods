@@ -6,7 +6,7 @@ vars:
     password: "{{ device_ssh_password }}"
     transport: cli
   tasks:
-  -name Login to Raritan
+  -name: Login to Raritan
   -expect:
       command: ''
       responses:
