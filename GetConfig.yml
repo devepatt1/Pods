@@ -1,7 +1,7 @@
 ---
 vars:
   cli:
-    host: "{{ inventory_hostname }}"
+    hosts: "{{ inventory_hostname }}"
     username: "{{ device_ssh_username }}"
     password: "{{ device_ssh_password }}"
     transport: cli
