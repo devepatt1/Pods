@@ -5,16 +5,17 @@ vars:
     username: "{{ device_ssh_username }}"
     password: "{{ device_ssh_password }}"
     transport: cli
-  tasks:
-  -name: Login to device
+tasks:
+-name: Login to device
   cli_command:
     command: ""
     prompt:
       -"Password:"
     answer: "cisco"
+-name: Get version info
   cli_command:
     command: "show version"
   register: command_output
-  -name: Print to terminal
+-name: Print to terminal
   debug:
     msg: "{{command_output.stdout}}"
