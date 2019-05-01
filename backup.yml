@@ -3,7 +3,7 @@
   hosts: all
   connection: network_cli
   gather_facts: no
-  ansible_network_os == 'ios'
+  ansible_network_os: ios
   
   tasks:
     - name: gather ios_facts
