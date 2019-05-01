@@ -8,10 +8,12 @@ vars:
   tasks:
   -name: Login to Raritan
   -expect:
-      command: ''
+      command: \r\n
       responses:
           login as: "anonymous"
           password: ""
+          Password: "cisco"
+          
   
 # Collect only the config and default facts
 - ios_facts:
