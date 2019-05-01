@@ -13,10 +13,7 @@ vars:
           login as: "anonymous"
           password: ""
           Password: "cisco"
-          
-  
-# Collect only the config and default facts
-- ios_facts:
-    gather_subset:
-      - config
-    provider: "{{ cli }}"
+   -ios_facts:
+      gather_subset:
+        - config
+      provider: "{{ cli }}"
