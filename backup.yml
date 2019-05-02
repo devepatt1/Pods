@@ -6,7 +6,7 @@
   tasks:
     - name: gather ios_facts
       ios_facts:
-      register: version
+        register: version
 
     - debug:
         msg: "{{version}}"
