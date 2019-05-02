@@ -1,9 +1,7 @@
 ---
 - name: Configuration Backups
   hosts: all
-  connection: network_cli
   gather_facts: no
-  
   tasks:
     - name: gather ios_facts
       ios_facts:
