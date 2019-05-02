@@ -1,7 +1,8 @@
 ---
 - name: Configuration Backups
   hosts: all
-  connection: local
+  username: "{{ansible_net_username}}"
+  password: "{{ansible_net_password}}"
   gather_facts: no
   tasks:
     - name: gather ios_facts
