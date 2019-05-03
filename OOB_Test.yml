@@ -2,7 +2,8 @@
 - name: configure the login banner
   hosts: all
   connection: network_cli
-  
+  become: yes
+  become_method: enable
   tasks:
    - name: Get past the TAD
      ios_command:
