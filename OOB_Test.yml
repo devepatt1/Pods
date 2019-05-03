@@ -16,6 +16,9 @@ tasks:
         - command: "\r"
           prompt: 'Password:'
           answer: 'cisco'
+        - command: "enable"
+          prompt: 'Password:'
+          answer: 'cisco'
           
  - name: Try to apply a login banner to the device.  
     ios_banner:
