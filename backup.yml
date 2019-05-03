@@ -2,17 +2,13 @@
 - name: Configuration Backups
   hosts: all
   connection: network_cli
-  username: "{{ansible_net_username}}"
-  password: "{{ansible_net_password}}"
   gather_facts: no
   tasks:
     - name: gather ios_facts
       ios_facts:
         register: version
-
     - debug:
         msg: "{{version}}"
-
     - name: Backup configuration
       ios_config:
         backup: yes
