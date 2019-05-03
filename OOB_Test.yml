@@ -1,8 +1,6 @@
 ---
  hosts: all
-  connection: network_cli
-  become: yes
-  become_method: enable
+ connection: network_cli
   
 tasks:
  - name: Get past the TAD
