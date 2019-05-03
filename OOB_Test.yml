@@ -6,13 +6,13 @@
   tasks:
    - name: Get past the TAD
      ios_command:
-       commands: "\r"
+       commands: "\n"
        wait_for: result[0] contains Password
       
    - name: Login to device
      ios_command:
        commands:
-         - command: "\r"
+         - command: "\n"
            prompt: 'Password:'
            answer: 'cisco'
          - command: "enable"
