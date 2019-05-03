@@ -1,26 +1,27 @@
 ---
- hosts: all
- connection: network_cli
+- name: configure the login banner
+  hosts: all
+  connection: network_cli
   
-tasks:
- - name: Get past the TAD
-    ios_command:
-      commands: "\r"
-      wait_for: result[0] contains Password
+  tasks:
+   - name: Get past the TAD
+      ios_command:
+        commands: "\r"
+        wait_for: result[0] contains Password
       
- - name: Login to device
-    ios_command:
-      commands:
-        - command: "\r"
-          prompt: 'Password:'
-          answer: 'cisco'
-        - command: "enable"
-          prompt: 'Password:'
-          answer: 'cisco'
+   - name: Login to device
+      ios_command:
+        commands:
+          - command: "\r"
+            prompt: 'Password:'
+            answer: 'cisco'
+          - command: "enable"
+            prompt: 'Password:'
+            answer: 'cisco'
           
- - name: Try to apply a login banner to the device.  
-    ios_banner:
-      banner: login
-        text: |
-          Login Banner Successful!!!
+   - name: Try to apply a login banner to the device.  
+      ios_banner:
+        banner: login
+          text: |
+            Login Banner Successful!!!
         state: present
