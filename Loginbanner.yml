@@ -1,5 +1,6 @@
 - name: configure the login banner
   hosts: all
+  connection: network_cli
   ios_banner:
     banner: login
     text: |
